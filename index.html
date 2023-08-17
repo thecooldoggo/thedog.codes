@@ -5,6 +5,7 @@
     <meta name="description" content="A website for TheDog.">
     <title>TheDog Codes</title>
     <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <div class="cursor"></div>
 <style>
 html, body {
     width: 100%;
@@ -15,13 +16,17 @@ html, body {
   background: linear-gradient(-45deg, #e97350, #eb2e76, #10799f, #0fe0af, #6567f7, #552cbb, #e3a254, #9b4393);
   background-size: 500% 500%;
   animation: gradient 15s ease-in-out infinite;
+
 }
 body {
   background-color: #474747;
+  cursor: none;
 }
 
-.content a:hover, .footer a:hover {
+.content a:hover{
   opacity: 1;
+  cursor: none;
+  
 }
 .content {
   margin: 0 auto;
@@ -43,7 +48,7 @@ body {
 }
 
 .header, .footer {
-  background-color: #222;
+  background-color: #303030;
   color: #fffefe;
   text-align: center;
   padding: 10px;
@@ -89,6 +94,25 @@ h2 {
   display: inline-block;
   opacity: 0.7;
 }
+.footer img {
+  transition: transform 0.3s ease-in-out;;
+}
+
+.footer img:hover {
+  transform: scale(1.2);
+  cursor: none;
+}
+.cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom right, #8afbaf, #0de2df);
+      pointer-events: none;
+      z-index: 9999;
+    }
 </style>
 </head>
 <body>
@@ -105,15 +129,15 @@ h2 {
 </div>
 <footer class="footer">
         <a href="https://discord.gg/3BQqmMNqVt">
-        <p>Discord</p></a>
-        <a href="https://www.youtube.com/channel/UCLnhTPpRyWjjXN7CgJZhofw">
-        <p>Youtube</p></a>
+        <img src="discord.png" alt="discord logo" width="80px";>
         <a href="https://www.twitch.tv/thedoggoiscool">
-        <p>Twitch</p></a>
+          <img src="twitch.png" alt="twitch logo" width="68px";>
+        <a href="https://www.youtube.com/channel/UCLnhTPpRyWjjXN7CgJZhofw">
+        <img src="youtube.png" alt="youtube logo" width="80px";>
         <a href="mailto:will@thedog.codes">
-        <p>Email</p></a>
+          <img src="mail.png" alt="mail logo" width="80px";>
         <a href="https://socialmediaissues.me">
-        <p>Other Website</p></a>
+          <img src="link.png" alt="link logo" width="80px";>
 </footer>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
@@ -129,6 +153,13 @@ h2 {
     google: {
       families: ["Roboto Condensed"]
     }
+  });
+</script>
+<script>
+  document.addEventListener("mousemove", function(event) {
+    var cursor = document.querySelector(".cursor");
+    cursor.style.left = event.clientX + "px";
+    cursor.style.top = event.clientY + "px";
   });
 </script>
 </html>
