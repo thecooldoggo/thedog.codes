@@ -108,16 +108,17 @@ h2 {
   }
 }
 .cursor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: linear-gradient(to bottom right, #8afbaf, #0de2df);
-      pointer-events: none;
-      z-index: 9999;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(to top left, #314ff8, #c13cff, #ff7f50);
+  pointer-events: none;
+  z-index: 9999;
+}
+
 </style>
 </head>
 <body>
@@ -134,15 +135,15 @@ h2 {
 </div>
 <footer class="footer">
         <a href="https://discord.gg/3BQqmMNqVt">
-        <img src="discord.png" alt="discord logo" width="80px";>
+        <img src="discord.png" alt="discord logo" width="60px";>
         <a href="https://www.twitch.tv/thedoggoiscool">
-          <img src="twitch.png" alt="twitch logo" width="68px";>
+          <img src="twitch.png" alt="twitch logo" width="49px";>
         <a href="https://www.youtube.com/channel/UCLnhTPpRyWjjXN7CgJZhofw">
-        <img src="youtube.png" alt="youtube logo" width="80px";>
+        <img src="youtube.png" alt="youtube logo" width="60px";>
         <a href="mailto:will@thedog.codes">
-          <img src="mail.png" alt="mail logo" width="80px";>
+          <img src="mail.png" alt="mail logo" width="60px";>
         <a href="https://socialmediaissues.me">
-          <img src="link.png" alt="link logo" width="80px";>
+          <img src="link.png" alt="link logo" width="60px";>
 </footer>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
@@ -159,8 +160,6 @@ h2 {
       families: ["Roboto Condensed"]
     }
   });
-</script>
-<script>
   document.addEventListener("mousemove", function(event) {
     var cursor = document.querySelector(".cursor");
     cursor.style.left = event.clientX + "px";
