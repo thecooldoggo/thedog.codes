@@ -1,0 +1,135 @@
+html, body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    background: linear-gradient(-45deg, #e97350, #eb2e76, #10799f, #0fe0af, #6567f7, #552cbb, #e3a254, #9b4393);
+    background-size: 500% 500%;
+    animation: gradient 15s ease-in-out infinite;
+    background-color: #474747;
+    cursor: none;
+  }
+  
+  .content h2 {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    opacity: 0.7;
+  }
+  
+  .content h2:hover {
+    transition: opacity 0.3s ease-in-out;
+    cursor: none;
+  }
+  
+  .header, .footer {
+    background-color: #303030;
+    color: #fffefe;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.7;
+    border-radius: 20px;
+    box-shadow: 15px #000;
+    font-size: 20px;
+    margin: 15px;
+  }
+
+  
+  h1 {
+    font-family: "Borel", sans-serif;
+  }
+  
+  p {
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  
+  .content {
+    margin: 0 auto;
+    width: 600px;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+  
+  .footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+
+  .footer img {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .footer img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: none;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .cursor {
+      display: none;
+    }
+  }
+  
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(to top left, #314ff8, #c13cff, #ff7f50);
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  
+  .projects a {
+    font-size: 28px;
+    line-height: 1.5;
+    color: #ffffffd8;
+    text-decoration: none;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #333;
+    opacity: 0.7;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  .projects a:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    background-image: linear-gradient(to bottom right, #1437fc, #b805ff);
+    color: #fff;
+    cursor: none;
+  }
