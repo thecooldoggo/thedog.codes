@@ -2,13 +2,21 @@ html, body {
   width: 100%;
   height: 100%;
 }
-
+/* Will Mehler 2023 */
 body {
   background: linear-gradient(-45deg, #e97350, #eb2e76, #10799f, #0fe0af, #6567f7, #552cbb, #e3a254, #9b4393);
   background-size: 500% 500%;
   animation: gradient 15s ease-in-out infinite;
   background-color: #474747;
   cursor: none;
+}
+.pfp {
+border-radius: 50%;
+ width: 200px;
+  border: 5px solid white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .content h2 {
@@ -108,10 +116,16 @@ p {
 
 .projects {
   display: flex;
-  flex-direction: column;
+  flex-direction: grid;
   align-items: center;
   margin-top: 50px;
   font-family: "Roboto Condensed", sans-serif;
+  gap: 30px;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
 }
 
 .projects a {
@@ -125,11 +139,17 @@ p {
   opacity: 0.7;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
+  max-width: 400px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 .projects a:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
-  background-image: linear-gradient(to bottom right, #1437fc, #b805ff);
+  background-image: linear-gradient(to bottom right, #0077c2, #2b008f, #19005e);
   color: #fff;
   cursor: none;
 }
