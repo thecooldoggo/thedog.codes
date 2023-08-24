@@ -134,16 +134,15 @@ h1:hover {
 
 .projects {
   display: flex;
-  flex-direction: grid;
-  align-items: center;
   margin-top: 50px;
   font-family: "Roboto Condensed", sans-serif;
   gap: 30px;
   justify-items: center;
   margin: 0 auto;
   max-width: 800px;
-  display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .projects a {
