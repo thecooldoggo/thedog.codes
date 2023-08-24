@@ -8,7 +8,8 @@ body {
   background-size: 500% 500%;
   animation: gradient 15s ease-in-out infinite;
   background-color: #474747;
-  cursor: none;
+}
+* {cursor: none;
 }
 .pfp {
 border-radius: 50%;
@@ -35,7 +36,6 @@ border-radius: 50%;
 
 .content h2:hover {
   transition: opacity 0.3s ease-in-out;
-  cursor: none;
 }
 
 .header, .footer {
@@ -100,7 +100,6 @@ h1:hover {
 .footer img:hover {
   transform: scale(1.2);
   transition: transform 0.3s ease-in-out;
-  cursor: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -170,6 +169,5 @@ h1:hover {
 .projects a:hover {
   background-image: linear-gradient(to bottom right, #0077c2, #2b008f, #19005e);
   color: #fff;
-  cursor: none;
   box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.5);
 }
