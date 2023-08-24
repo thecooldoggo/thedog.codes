@@ -10,7 +10,7 @@ body {
   background-color: #474747;
 }
 html {
-  overflow: hidden;
+  overflow-x: hidden
 }
 * {cursor: none;
 }
