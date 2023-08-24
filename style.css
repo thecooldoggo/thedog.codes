@@ -9,6 +9,9 @@ body {
   animation: gradient 15s ease-in-out infinite;
   background-color: #474747;
 }
+html {
+  overflow: hidden;
+}
 * {cursor: none;
 }
 .pfp {
