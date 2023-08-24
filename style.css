@@ -9,12 +9,9 @@ body {
   animation: gradient 15s ease-in-out infinite;
   background-color: #474747;
 }
-<<<<<<< HEAD
 html {
   overflow-x: hidden
 }
-=======
->>>>>>> main
 * {cursor: none;
 }
 .pfp {
