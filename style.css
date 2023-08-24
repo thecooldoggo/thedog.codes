@@ -17,6 +17,7 @@ border-radius: 50%;
   display: block;
   margin: 0 auto;
   margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 .content h2 {
@@ -50,10 +51,6 @@ border-radius: 50%;
 }
 
 
-h1 {
-  font-family: "Borel", sans-serif;
-}
-
 p {
   font-family: "Roboto Condensed", sans-serif;
 }
@@ -63,6 +60,28 @@ p {
   width: 600px;
   overflow-wrap: break-word;
   text-align: center;
+}
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1:hover {
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  background-image: linear-gradient(to bottom right,  #0077c2, #2b008f, #19005e);
+  color: white;
+  box-shadow: 0px 0px 10px 5px rgba(172, 172, 172, 0.5);
 }
 
 .footer a {
@@ -152,4 +171,5 @@ p {
   background-image: linear-gradient(to bottom right, #0077c2, #2b008f, #19005e);
   color: #fff;
   cursor: none;
+  box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.5);
 }
