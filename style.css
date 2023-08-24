@@ -170,3 +170,14 @@ h1:hover {
   color: #fff;
   box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.5);
 }
+@media only screen and (max-width: 600px) {
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects a {
+    margin: 10px;
+    text-align: center;
+  }
+}
