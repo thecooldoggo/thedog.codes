@@ -144,7 +144,7 @@ h1:hover {
   height: fit-content;
   text-align: center;
   margin: 0 auto;
-  background: linear-gradient(to top right, #1e0226, #3c0151);
+  background: linear-gradient(to top right, #3737a1, #6315c8);
   color: white;
   box-shadow: 0px 0px 40px 5px rgba(172, 172, 172, 0.5);
 }
