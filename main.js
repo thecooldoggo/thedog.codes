@@ -42,3 +42,23 @@ document.querySelector("h1").onmouseover = event => {
     iteration += 1 / 3;
   }, 58);
 }
+const starsContainer = document.querySelector('.stars');
+const numStars = 100;
+
+for (let i = 0; i < numStars; i++) {
+  const star = document.createElement('div');
+  star.classList.add('star');
+  star.style.top = `${Math.random() * 100}%`;
+  star.style.left = `${Math.random() * 100}%`;
+  star.style.animationDelay = `${Math.random() * 2}s`;
+  starsContainer.appendChild(star);
+}
+setTimeout(() => {
+  starsContainer.classList.add('fade-in');
+}, 1000);
+document.addEventListener('mousemove', e => {
+  const x = e.clientX / window.innerWidth;
+  const y = e.clientY / window.innerHeight;
+
+  starsContainer.style.transform = `translate(-${x * 50}px, -${y * 50}px)`;
+});
