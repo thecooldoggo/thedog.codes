@@ -10,8 +10,8 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #160918;
-  background: linear-gradient(to top left,  #1e0226, #110115, #11080d);
+  background-color: rgb(24, 17, 34);
+  background-image: linear-gradient(to top left,  #1e0226, #110115, #11080d);
 }
 
 .stars {
@@ -95,11 +95,11 @@ html {
   color: #fffefe;
   text-align: center;
   padding: 10px;
-  opacity: 0.7;
   border-radius: 20px;
-  box-shadow: 15px #000;
+  opacity: .7;
   font-size: 20px;
   margin: 15px;
+  border: 5px solid rgba(255, 255, 255, 0.5);
 }
 .pfp {
   border-radius: 50%;
@@ -110,12 +110,24 @@ html {
   margin: 0 auto;
   margin-bottom: 10px;
   margin-top: 15px;
-  opacity: 1;
+  opacity: 1 !important;
+  object-fit: contain;
+}
+.pfp {
+  border-radius: 50%;
+  width: 200px;
+  height: auto;
+  border: 5px solid white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  opacity: 1 !important;
   object-fit: contain;
 }
 
 .pfp:hover {
-  box-shadow: 0px 0px 40px 5px rgba(228, 228, 228, 0.5);
+  box-shadow: 0px 0px 35px 7px rgba(228, 228, 228, 0.5);
 }
 p {
   font-family: "Roboto Condensed", sans-serif;
@@ -134,20 +146,20 @@ h1 {
   color: white;
   padding: 0rem clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
-  width: fit-content;
-  height: fit-content;
+  width: 250px;
+  height: 100px;
   text-align: center;
   margin: 0 auto;
 }
 
 h1:hover {
-  width: fit-content;
-  height: fit-content;
   text-align: center;
   margin: 0 auto;
   background: linear-gradient(to top right, #3737a1, #6315c8);
   color: white;
-  box-shadow: 0px 0px 40px 5px rgba(228, 228, 228, 0.5);
+  box-shadow: 0px 0px 35px 7px rgba(228, 228, 228, 0.5);
+  width: 250px;
+  height: 100px;
 }
 
 .footer a {
@@ -235,7 +247,7 @@ h1:hover {
 .projects a:hover {
   background-image: linear-gradient(to bottom right, #0077c2, #2b008f, #19005e);
   color: #fff;
-  box-shadow: 0px 0px 40px 5px rgba(228, 228, 228, 0.5);
+  box-shadow: 0px 0px 35px 7px rgba(228, 228, 228, 0.5);
 }
 @media only screen and (max-width: 600px) {
   .projects {
