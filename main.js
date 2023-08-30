@@ -62,3 +62,19 @@ document.addEventListener('mousemove', e => {
 
   starsContainer.style.transform = `translate(-${x * 50}px, -${y * 50}px)`;
 });
+
+const background = document.querySelector('.background');
+function updateBackground() {
+  const currentTime = new Date();
+  const currentHour = currentTime.getHours();
+  const isDaytime = currentHour >= 6 && currentHour < 18;
+  if (isDaytime) {
+    background.classList.remove('night');
+    background.classList.add('day');
+  } else {
+    background.classList.remove('day');
+    background.classList.add('night');
+  }
+}
+updateBackground();
+setInterval(updateBackground, 60000);

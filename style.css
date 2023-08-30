@@ -10,10 +10,111 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgb(24, 17, 34);
+  transition: background-color 2s ease-in-out;
+}
+
+.day {
+  background-image: linear-gradient(to top left,  skyblue, #3099c6, #3e7bcb);
+}
+
+.night {
   background-image: linear-gradient(to top left,  #1e0226, #110115, #11080d);
 }
 
+.cloud1 {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 200px;
+  height: 100px;
+  background-image: url('images/cloud2.png');
+  background-size: cover;
+  animation: cloudMove 56s linear infinite;
+}
+
+.cloud2 {
+  position: absolute;
+  top: 40%;
+  left: -10%;
+  width: 200px;
+  height: 100px;
+  background-image: url('images/cloud.png');
+  background-size: cover;
+  animation: cloudMove 41s linear infinite;
+}
+
+.cloud3 {
+  position: absolute;
+  top: 65%;
+  left: -10%;
+  width: 200px;
+  height: 100px;
+  background-image: url('images/cloud.png');
+  background-size: cover;
+  animation: cloudMove 58s linear infinite;
+}
+.cloud4 {
+  position: absolute;
+  top: 85%;
+  left: -10%;
+  width: 200px;
+  height: 100px;
+  background-image: url('images/cloud2.png');
+  background-size: cover;
+  animation: cloudMove 66s linear infinite;
+}
+.cloud5 {
+  position: absolute;
+  top: 15%;
+  left: -10%;
+  width: 200px;
+  height: 100px;
+  background-image: url('images/cloud.png');
+  background-size: cover;
+  animation: cloudMove 100s linear infinite;
+}
+.cloud6 {
+  position: absolute;
+  top: 95%;
+  left: -10%;
+  width: 200px;
+  height: 100px;
+  background-image: url('images/cloud2.png');
+  background-size: cover;
+  animation: cloudMove 180s linear infinite;
+}
+.cloud7 {
+  position: absolute;
+  top: 67%;
+  left: -10%;
+  width: 200px;
+  height: 100px;
+  background-image: url('images/cloud2.png');
+  background-size: cover;
+  animation: cloudMove 150s linear infinite;
+}
+.cloud8 {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 200px;
+  height: 100px;
+  background-image: url('images/cloud.png');
+  background-size: cover;
+  animation: cloudMove 130s linear infinite;
+}
+
+@keyframes cloudMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(700%);
+  }
+}
+.night [class^="cloud"] {
+  display: none;
+}
 .stars {
   position: absolute;
   top: 0;
@@ -25,6 +126,9 @@ html, body {
   transition: opacity 2s ease-in-out;
 }
 
+.day .stars {
+  display: none;
+}
 .star {
   position: absolute;
   top: 0;
@@ -99,7 +203,6 @@ html {
   opacity: .7;
   font-size: 20px;
   margin: 15px;
-  border: 5px solid rgba(255, 255, 255, 0.5);
 }
 .pfp {
   border-radius: 50%;
@@ -110,25 +213,14 @@ html {
   margin: 0 auto;
   margin-bottom: 10px;
   margin-top: 15px;
-  opacity: 1 !important;
   object-fit: contain;
-}
-.pfp {
-  border-radius: 50%;
-  width: 200px;
-  height: auto;
-  border: 5px solid white;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  margin-top: 15px;
-  opacity: 1 !important;
-  object-fit: contain;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .pfp:hover {
   box-shadow: 0px 0px 35px 7px rgba(228, 228, 228, 0.5);
 }
+
 p {
   font-family: "Roboto Condensed", sans-serif;
 }
