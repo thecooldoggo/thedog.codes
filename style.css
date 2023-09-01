@@ -33,7 +33,7 @@ html, body {
   left: -10%;
   width: 200px;
   height: 100px;
-  background-image: url('images/cloud2.wepm');
+  background-image: url('images/cloud2.webp');
   background-size: cover;
   animation: cloudMove 56s linear infinite;
 }
