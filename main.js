@@ -78,3 +78,10 @@ function updateBackground() {
 }
 updateBackground();
 setInterval(updateBackground, 60000);
+
+const backgrounds = ['images/bg1.webp', 'images/bg2.webp', 'images/bg3.webp', 'images/bg4.webp', 'images/bg5.webp', 'images/bg6.webp'];
+const randomIndex = Math.floor(Math.random() * backgrounds.length);
+const backgroundElement = document.querySelector('.day');
+if (backgroundElement) {
+  backgroundElement.style.backgroundImage = `url(${backgrounds[randomIndex]})`;
+}

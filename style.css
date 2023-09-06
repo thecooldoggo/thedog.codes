@@ -10,14 +10,17 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  transition: background-color 2s ease-in-out;
 }
 
 .day {
-  background-color: #87ceeb;
-  background: linear-gradient(to top left, #87ceeb, #3099c6, #3e7bcb);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-repeat: repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
 }
 
 .night {
@@ -27,98 +30,7 @@ html, body {
   background-attachment: fixed;
 }
 
-.cloud1 {
-  position: absolute;
-  top: 10%;
-  left: -10%;
-  width: 200px;
-  height: 100px;
-  background-image: url('images/cloud2.webp');
-  background-size: cover;
-  animation: cloudMove 56s linear infinite;
-}
-
-.cloud2 {
-  position: absolute;
-  top: 40%;
-  left: -10%;
-  width: 200px;
-  height: 100px;
-  background-image: url('images/cloud.webp');
-  background-size: cover;
-  animation: cloudMove 41s linear infinite;
-}
-
-.cloud3 {
-  position: absolute;
-  top: 65%;
-  left: -10%;
-  width: 200px;
-  height: 100px;
-  background-image: url('images/cloud.webp');
-  background-size: cover;
-  animation: cloudMove 58s linear infinite;
-}
-.cloud4 {
-  position: absolute;
-  top: 85%;
-  left: -10%;
-  width: 200px;
-  height: 100px;
-  background-image: url('images/cloud2.webp');
-  background-size: cover;
-  animation: cloudMove 66s linear infinite;
-}
-.cloud5 {
-  position: absolute;
-  top: 15%;
-  left: -10%;
-  width: 200px;
-  height: 100px;
-  background-image: url('images/cloud.webp');
-  background-size: cover;
-  animation: cloudMove 100s linear infinite;
-}
-.cloud6 {
-  position: absolute;
-  top: 95%;
-  left: -10%;
-  width: 200px;
-  height: 100px;
-  background-image: url('images/cloud2.webp');
-  background-size: cover;
-  animation: cloudMove 180s linear infinite;
-}
-.cloud7 {
-  position: absolute;
-  top: 67%;
-  left: -10%;
-  width: 200px;
-  height: 100px;
-  background-image: url('images/cloud2.webp');
-  background-size: cover;
-  animation: cloudMove 150s linear infinite;
-}
-.cloud8 {
-  position: absolute;
-  top: 50%;
-  left: -10%;
-  width: 200px;
-  height: 100px;
-  background-image: url('images/cloud.webp');
-  background-size: cover;
-  animation: cloudMove 130s linear infinite;
-}
-
-@keyframes cloudMove {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(700%);
-  }
-}
-.night [class^="cloud"] {
+.night [class^=".day"] {
   display: none;
 }
 .stars {
