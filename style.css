@@ -233,6 +233,9 @@ h1:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
 .projects a {
   font-size: 28px;
@@ -251,8 +254,8 @@ h1:hover {
   height: auto;
   text-align: center;
   display: grid;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
 .projects a:hover {
   background-image: linear-gradient(to bottom right, #0077c2, #2b008f, #19005e);
