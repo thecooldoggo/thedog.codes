@@ -1,10 +1,10 @@
 :root {
     --blue-rgb: 177 204 239;
     --grey-rgb: 222 186 162;
-    --brown-rgb: 83 63 49;
+    --brown-rgb: 245 75 7;
   }
   html, body {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
   }
   
   body {
