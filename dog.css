@@ -1,0 +1,196 @@
+:root {
+    --blue-rgb: 177 204 239;
+    --grey-rgb: 222 186 162;
+    --brown-rgb: 83 63 49;
+  }
+  html, body {
+    background-color: black;
+  }
+  
+  body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 1000ms;
+  }
+  .projects {
+    display: flex;
+    margin-top: 50px;
+    font-family: "Roboto Condensed", sans-serif;
+    gap: 30px;
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+  .projects a {
+    font-size: 28px;
+    line-height: 1.5;
+    color: #ffffffd8;
+    text-decoration: none;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #333;
+    opacity: 0.7;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  .projects a:hover {
+    background-image: linear-gradient(to bottom right, #0077c2, #2b008f, #19005e);
+    color: #fff;
+    box-shadow: 0px 0px 35px 7px rgba(228, 228, 228, 0.5);
+  }
+  body:has(.card[data-color="blue"]:hover) {
+    background-color: rgb(var(--blue-rgb) / 25%);
+  }
+  
+  body:has(.card[data-color="grey"]:hover) {
+    background-color: rgb(var(--grey-rgb) / 25%);
+  }
+  
+  body:has(.card[data-color="brown"]:hover) {
+    background-color: rgb(var(--brown-rgb) / 25%);
+  }
+  
+  #cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .card {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: scale 100ms;
+  }
+  
+  .card .card-front-image {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .card .card-image {
+    width: clamp(300px, 20vw, 500px);
+    aspect-ratio: 2 / 3;
+    border-radius: clamp(0.5rem, 0.75vw, 2rem);
+    object-fit: cover;
+  }
+  
+  .card-faders {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1500ms;
+    pointer-events: none;
+  }
+  
+  .card:hover .card-faders {
+    opacity: 1;
+  }
+  
+  .card:active {
+    scale: 0.98;
+  }
+  
+  .card-fader {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .card-fader:nth-child(odd) {
+    animation: fade-left 3s linear infinite;
+  }
+  
+  .card-fader:nth-child(even) {
+    animation: fade-right 3s linear infinite;
+  }
+  
+  .card-fader:is(:nth-child(3), :nth-child(4)) {
+    animation-delay: 750ms;
+  }
+  
+  .card-fader:is(:nth-child(5), :nth-child(6)) {
+    animation-delay: 1500ms;
+  }
+  
+  .card-fader:is(:nth-child(7), :nth-child(8)) {
+    animation-delay: 2250ms;
+  }
+  
+  @media(max-width: 1200px) {
+    body {    
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    
+    #cards {
+      flex-direction: column; 
+      align-items: center;
+      gap: 4rem;
+      padding: 4rem;
+    }
+    
+    .card .card-image {
+      width: 400px;    
+    }
+  }
+  
+  @media(max-width: 600px) {
+    #cards {
+      gap: 2rem;
+      padding: 2rem;
+    }
+    
+    .card {
+      width: 80%;    
+    }
+    
+    .card .card-image {
+      width: 100%;    
+    }
+  }
+  
+  @keyframes fade-left {
+    from {
+      scale: 1;
+      translate: 0%;
+      opacity: 1;
+    }
+    
+    to {
+      scale: 0.8;
+      translate: -30%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fade-right {
+    from {
+      scale: 1;
+      translate: 0%;
+      opacity: 1;
+    }
+    
+    to {
+      scale: 0.8;
+      translate: 30%;
+      opacity: 0;
+    }
+  }
