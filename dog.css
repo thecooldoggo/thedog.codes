@@ -6,7 +6,26 @@
   html, body {
     background-color: rgb(0, 0, 0);
   }
-  
+  #profile-pic {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+#profile-pic img {
+    border-radius: 50%;
+    width: 75px; 
+    height: 75px;
+    transition: transform 0.3s ease-in-out; 
+}
+
+#profile-pic img:hover {
+    transform: scale(1.2); 
+}
+
+#profile-pic img:active {
+    transform: scale(0.9); 
+}
   body {
     min-height: 100vh;
     padding: 0;
