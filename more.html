@@ -1,0 +1,60 @@
+<head>
+    <html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A website for TheDog.">
+    <title>More - TheDog Codes</title>
+    <link rel="shortcut icon" href="images/favicon.webp" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: rgb(52, 52, 52);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #formContainer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <form id="passwordForm">
+            <input type="password" id="passwordInput" required>
+            <input type="submit" value="Enter" style="color: rgb(0, 0, 0)">
+            <p id="errorMessage" style="color: rgb(239, 93, 93); display: none;">Wrong password.</p>
+        </form>
+    </div>
+    <div id="content" style="display: none;">
+</body>
+</style>
+<script>
+    function loadContent() {
+        var obj = document.createElement('object');
+        obj.data = 'https://smashkarts.io';
+        obj.width = '100%';
+        obj.height = '100%';
+        document.body.appendChild(obj);
+    }
+    document.getElementById('passwordForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var password = document.getElementById('passwordInput').value;
+        if (password === 'thedog.will') {
+            document.getElementById('passwordForm').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            document.cookie = "session=69420; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+            loadContent();
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    });
+    let x = document.cookie;
+    if (x.includes('session=69420')) {
+        document.getElementById('passwordForm').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+        loadContent();
+    }
+</script>
+</html>
