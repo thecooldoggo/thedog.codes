@@ -82,7 +82,7 @@ window.onload = function() {
             const accessToken = data.access_token;
 
             // Use the access token to fetch the user's name and friends list
-            const API_URL = ''; // Replace with your API URL
+            const API_URL = data.access_token; // Replace with your API URL
             fetch(API_URL, {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`
