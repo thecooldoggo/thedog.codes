@@ -48,23 +48,29 @@
         obj.height = '100%';
         document.body.appendChild(obj);
     }
+    var failedAttempts = 0;
     document.getElementById('passwordForm').addEventListener('submit', function(event) {
         event.preventDefault();
         var password = document.getElementById('passwordInput').value;
-        if (password === 'thedog.will') {
+        if (password === 'thedog/sub') {
             document.getElementById('passwordForm').style.display = 'none';
             document.getElementById('content').style.display = 'block';
             var date = new Date();
             date.setTime(date.getTime() + (3*24*60*60*1000));
             var expires = "expires=" + date.toUTCString();
-            document.cookie = "session=88392; " + expires + "; path=/";
+            document.cookie = "session=69200; " + expires + "; path=/";
             loadContent();
+            failedAttempts = 0; 
         } else {
+            failedAttempts++;
             document.getElementById('errorMessage').style.display = 'block';
+            if (failedAttempts >= 2) {
+                window.location.href = "https://thedog.codes"; 
+            }
         }
     });
     let x = document.cookie;
-    if (x.includes('session=88392')) {
+    if (x.includes('session=69200')) {
         document.getElementById('passwordForm').style.display = 'none';
         document.getElementById('content').style.display = 'block';
         loadContent();
