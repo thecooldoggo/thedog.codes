@@ -64,24 +64,16 @@ document.addEventListener('mousemove', e => {
 });
 
 const background = document.querySelector('.background');
-function updateBackground() {
-  const currentTime = new Date();
-  const currentHour = currentTime.getHours();
-  const isDaytime = currentHour >= 7 && currentHour < 19;
-  if (isDaytime) {
-    background.classList.remove('night');
-    background.classList.add('day');
-  } else {
-    background.classList.remove('day');
-    background.classList.add('night');
-  }
-}
-updateBackground();
-setInterval(updateBackground, 60000);
-
-const backgrounds = ['images/bg1.webp', 'images/bg2.webp', 'images/bg3.webp', 'images/bg4.webp', 'images/bg5.webp', 'images/bg6.webp'];
-const randomIndex = Math.floor(Math.random() * backgrounds.length);
-const backgroundElement = document.querySelector('.day');
-if (backgroundElement) {
-  backgroundElement.style.backgroundImage = `url(${backgrounds[randomIndex]})`;
-}
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      background.classList.remove('day');
+      background.classList.add('night');
+    } else {
+      background.classList.remove('night');
+      background.classList.add('day');
+    }
+    const backgrounds = ['images/bg1.webp', 'images/bg2.webp', 'images/bg3.webp', 'images/bg4.webp', 'images/bg5.webp', 'images/bg6.webp'];
+    const randomIndex = Math.floor(Math.random() * backgrounds.length);
+    const backgroundElement = document.querySelector('.day');
+    if (backgroundElement) {
+      backgroundElement.style.backgroundImage = `url(${backgrounds[randomIndex]})`;
+    }
