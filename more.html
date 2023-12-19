@@ -45,7 +45,6 @@
 </style>
 <script>
     function loadContent() {
-        const sleep = (ms = 500) => new Promise(resolve => setTimeout(resolve, ms));
         const existingObject = document.body.querySelector('object');
         if (existingObject) {   
         document.body.removeChild(existingObject);
@@ -85,6 +84,7 @@
             }
         }
     });
+    const sleep = (ms = 100) => new Promise(resolve => setTimeout(resolve, ms));
     let x = document.cookie;
     if (x.includes('session=69200')) {
         document.getElementById('passwordForm').style.display = 'none';
