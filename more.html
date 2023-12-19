@@ -42,12 +42,18 @@
 </style>
 <script>
     function loadContent() {
+        const existingObject = document.body.querySelector('object');
+        if (existingObject) {
+        document.body.removeChild(existingObject);
+  }
+        let userInput = prompt("Where to?");
         var obj = document.createElement('object');
-        obj.data = 'https://smashkarts.io';
+        obj.data = "https://" + userInput;
         obj.width = '100%';
         obj.height = '100%';
         document.body.appendChild(obj);
     }
+    
     var failedAttempts = 0;
     document.getElementById('passwordForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -60,7 +66,13 @@
             var expires = "expires=" + date.toUTCString();
             document.cookie = "session=69200; " + expires + "; path=/";
             loadContent();
-            failedAttempts = 0; 
+            failedAttempts = 0;
+            document.addEventListener('keydown', function(event) {
+            if (event.key === 'L') {
+            loadContent();
+            }
+            });
+
         } else {
             failedAttempts++;
             document.getElementById('errorMessage').style.display = 'block';
