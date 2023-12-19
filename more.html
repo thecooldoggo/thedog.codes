@@ -45,8 +45,9 @@
 </style>
 <script>
     function loadContent() {
+        const sleep = (ms = 500) => new Promise(resolve => setTimeout(resolve, ms));
         const existingObject = document.body.querySelector('object');
-        if (existingObject) {
+        if (existingObject) {   
         document.body.removeChild(existingObject);
   }
         let userInput = prompt("Where to?");
