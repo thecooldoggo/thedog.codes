@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- TheDog 2024 -->
+<html>
+<head>
+    <html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A website for TheDog.">
+    <title>Stars - TheDog Codes</title>
+    <link rel="shortcut icon" href="images/favicon.webp" type="image/png">
+</head>
+<div class="background">
+    <div class="stars"></div>
+  </div>
+<style>
+    html, body {
+        width: 100%;
+        height:100%;
+        cursor: none;
+      }
+      
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgb(24, 17, 34);
+      background-image: linear-gradient(to top left,  #1e0226, #110115, #11080d);
+    }
+    
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+    
+    .star {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: white;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    
+    .fade-in {
+      opacity: 1;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+    }
+    
+    .star:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    
+    .star:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    
+    .star:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+    
+    .header, .footer {
+      background-color: #222;
+      color: #fffefe;
+      text-align: center;
+      padding: 10px;
+      opacity: 0.7;
+      border-radius: 20px;
+      font-size: 20px;
+    }
+    
+    h1 {
+      font-family: "Borel", sans-serif;
+    }
+    
+    p {
+      font-family: "Borel", sans-serif;
+    }
+    
+    .content {
+      margin: 0 auto;
+      width: 600px;
+    }
+</style>
+<script>
+const starsContainer = document.querySelector('.stars');
+const numStars = 100;
+
+for (let i = 0; i < numStars; i++) {
+  const star = document.createElement('div');
+  star.classList.add('star');
+  star.style.top = `${Math.random() * 100}%`;
+  star.style.left = `${Math.random() * 100}%`;
+  star.style.animationDelay = `${Math.random() * 2}s`;
+  starsContainer.appendChild(star);
+}
+
+setTimeout(() => {
+  starsContainer.classList.add('fade-in');
+}, 1000);
+
+document.addEventListener('mousemove', e => {
+  const x = e.clientX / window.innerWidth;
+  const y = e.clientY / window.innerHeight;
+
+  starsContainer.style.transform = `translate(-${x * 50}px, -${y * 50}px)`;
+});
+</script>
