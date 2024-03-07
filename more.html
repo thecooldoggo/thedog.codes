@@ -34,6 +34,7 @@
         <input type="password" id="passwordInput" required>
         <input type="submit" value="Enter" style="color: rgb(0, 0, 0)">
         <p id="errorMessage" style="color: rgb(239, 93, 93); display: none; font-family: 'Raleway', 'Helvetica Neue'; font-size: 20px;">Wrong password.</p>
+        <p id="errorMessage2" style="color: rgb(239, 93, 93); display: none; font-family: 'Raleway', 'Helvetica Neue'; font-size: 20px;">WOMP WOMP</p>
     </form>
     <div id="content" style="display: none;"></div>
 </body>
@@ -44,14 +45,26 @@
   </div>
 </style>
 <script>
+    let escapeCounter = 0;
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            escapeCounter++;
+            if (escapeCounter === 3) {
+                window.location.href = "https://google.com"; 
+            }
+        } else {
+            escapeCounter = 0;
+        }
+    });
+
     function loadContent() {
         const existingObject = document.body.querySelector('object');
         if (existingObject) {   
-        document.body.removeChild(existingObject);
-  }
+            document.body.removeChild(existingObject);
+        }
         let userInput = prompt("Where to?");
         var obj = document.createElement('object');
-        obj.data = "https://" + userInput;
+        obj.data =  userInput;
         obj.width = '100%';
         obj.height = '100%';
         document.body.appendChild(obj);
@@ -61,7 +74,7 @@
     document.getElementById('passwordForm').addEventListener('submit', function(event) {
         event.preventDefault();
         var password = document.getElementById('passwordInput').value;
-        if (password === 'thedog/sub') {
+        if (password === 'elperrito') {
             document.getElementById('passwordForm').style.display = 'none';
             document.getElementById('content').style.display = 'block';
             var date = new Date();
@@ -71,11 +84,12 @@
             loadContent();
             failedAttempts = 0;
             document.addEventListener('keydown', function(event) {
-            if (event.key === 'L') {
-            loadContent();
-            }
+                if (event.key === 'L') {
+                    loadContent();
+                }
             });
-
+        } else if (password === 'thedog/sub') {
+            document.getElementById('errorMessage2').style.display = 'block';
         } else {
             failedAttempts++;
             document.getElementById('errorMessage').style.display = 'block';
@@ -84,14 +98,14 @@
             }
         }
     });
-    document.addEventListener('DOMContentLoaded', () => {
-    let x = document.cookie;
-    if (x.includes('session=69200')) {
-    document.getElementById('passwordForm').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-    loadContent();
-  }
-});
 
+    document.addEventListener('DOMContentLoaded', () => {
+        let x = document.cookie;
+        if (x.includes('session=69200')) {
+            document.getElementById('passwordForm').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            loadContent();
+        }
+    });
 </script>
 </html>
